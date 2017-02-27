@@ -14,7 +14,7 @@ const writetxt = ( target, content ) => {
 	return new Promise( ( resolve, reject ) => {
 		fs.writeFile( target, content, err => {
 			if ( err ) return reject( err )
-			resolve( )
+			resolve( content )
 		} )
 	} )
 }
@@ -22,9 +22,9 @@ const writetxt = ( target, content ) => {
 readJson( __dirname + '/users.json' ).then( parsedData => {
 	// parsedData is the result of JSON.Parse( data ) from the resolve of readJson
 	// parsedData is an array
-	for (var i = 0; i < parsedData.length; i++) {
-		let thefilepath = __dirname + '/' + parsedData[i].name + '.txt'
-		let thecontent = parsedData[i].age + ' ' + parsedData[i].hair
-		writetxt( thefilepath, thecontent )
-	}
+	return Promise.all( parsedData.map( user => {
+		return writetxt( __dirname + '/' + user.name + '.txt', user.age + ' ' + user.hair )
+	} ) )
+} ).then( allResults => {
+	console.log( allResults )
 } ).catch( console.log.bind( console ) )
