@@ -1,0 +1,23 @@
+doctype html
+html
+	head
+		title Bottle
+		link( rel="stylesheet", href="/static/style.css" )
+	body
+		div#index.container
+			h1 Hello #{user}
+			p Welcome on this beautiful #{today}
+			h2 Today we are selling:
+			// - - for ( let i = 0; i < 2; i++ )
+				p I nam #{i} times
+			ul
+				each product in products
+					li The awesome: #{ product.name }
+			h2 The Guestbook
+			p Because we are 90s as f*ck
+			form( id="guestbook" )
+				input( type="text", name="name", placeholder="Your Name" )
+				textarea( name="message", placeholder="Your message" )
+				input( type="submit" )
+			script( src="/static/jquery.js" )
+			script( src="/static/custom.js" )
