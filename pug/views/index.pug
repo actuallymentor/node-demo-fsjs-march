@@ -15,7 +15,8 @@ html
 					li The awesome: #{ product.name }
 			h2 The Guestbook
 			p Because we are 90s as f*ck
-			form( id="guestbook" )
+			span#feedback
+			form( id="guestbook", action="/api", method="post" )
 				input( type="text", name="name", placeholder="Your Name" )
 				textarea( name="message", placeholder="Your message" )
 				input( type="submit" )
