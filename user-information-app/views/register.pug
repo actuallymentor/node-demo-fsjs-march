@@ -1,0 +1,11 @@
+doctype html
+html
+	head
+		title User info app - Registration
+	body
+		h1 Welcome stranger
+		p Register here:
+		form( action="/register", method="post" )
+			input( type="text", name="username", placeholder="Who are you?" )
+			input( type="email", name="email", placeholder="john@doe.com" )
+			input( type="submit" )

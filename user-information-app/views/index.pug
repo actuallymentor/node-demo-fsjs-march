@@ -1,0 +1,12 @@
+doctype html
+html
+	head
+		title User info app
+	body
+		h1 Welcome stranger
+		p These are our users:
+		ul
+			each user in users
+				li #{ user.name }
+		a( href="/search" ) Find the things.
+		a( href="/register" ) Join the Cool Kids.

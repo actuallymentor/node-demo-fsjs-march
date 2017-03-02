@@ -1,0 +1,10 @@
+doctype html
+html
+	head
+		title User info app - Search results
+	body
+		h1 Welcome stranger, here are your results
+		p The search results
+		ul
+			each user in results
+				li #{ user.name }: #{ user.email }
