@@ -9,6 +9,7 @@
   "author": "Mentor Palokaj <mentor@palokaj.co> (https://github.com/actuallymentor)",
   "license": "MIT",
   "dependencies": {
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.0",
     "pug": "^2.0.0-beta11"
   }
