@@ -41,6 +41,8 @@ app.get( '/', ( req, res ) => {
 	
 } )
 
+
+// THIS IS NON FUNCTIONAL CODE
 app.post( '/login', ( req, res ) => {
 	db.User.findOne( {
 		where: {
